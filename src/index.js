@@ -16,7 +16,7 @@ function replaceDefaultMessage(prop, context) {
       context.report({
         node: prop.value,
         message: `${CONSOLE_RED}"${value}"\n${matches.map(x => ' - ' + x.message).join('\n') + '\n=>' + CONSOLE_BLUE + ' ' + quotedFix}\n`,
-        fix: (fixer) => fixer.replaceText(prop.value, quotedFix)
+        // fix: (fixer) => fixer.replaceText(prop.value, quotedFix)
       })
     }
   }
@@ -31,7 +31,7 @@ function replaceDefaultMessage(prop, context) {
       context.report({
         node: temp.quasis[0],
         message: CONSOLE_RED + `"${value.split(/\n/g).join("\n" + CONSOLE_RED)}"\n - ${matches.map(x => x.message).join('\n - ') + '\n=>' + CONSOLE_BLUE + ' `' + fix.split(/\n/g).join("\n" + CONSOLE_BLUE) + "`\n"}`,
-        fix: (fixer) => fixer.replaceText(temp.quasis[0], "`" + fix + "`")
+        // fix: (fixer) => fixer.replaceText(temp.quasis[0], "`" + fix + "`")
       })
     }
   }
