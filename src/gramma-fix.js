@@ -68,9 +68,9 @@ function grammaFix(text, locale) {
         if (index > 0 && !EMOJI_REG.test(letters[index - 1]) && /[^\s\[\(\{]/.test(letters[index - 1])) {
           letters[index - 1] += ' '
         }
-        if (index < letters.length - 1 && !EMOJI_REG.test(letters[index + 1]) && /[^\s\]\)\}]/.test(letters[index + 1])) {
-          letters[index + 1] = ' ' + letters[index + 1]
-        }
+        // if (index < letters.length - 1 && !EMOJI_REG.test(letters[index + 1]) && /[^\s\]\)\}]/.test(letters[index + 1])) {
+        //   letters[index + 1] = ' ' + letters[index + 1]
+        // }
       }
     })
     fix = letters.join('')

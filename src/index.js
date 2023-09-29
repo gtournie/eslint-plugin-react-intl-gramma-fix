@@ -3,6 +3,7 @@ const grammaFix = require('./gramma-fix.js')
 const CONSOLE_BLUE = '\x1B[34m'
 const CONSOLE_RED = '\x1B[31m'
 
+
 function replaceDefaultMessage(prop, context) {
   const type = (prop.value || {}).type;
   if (type === 'Literal') {
@@ -15,7 +16,7 @@ function replaceDefaultMessage(prop, context) {
       const quotedFix = quote + fix.replace(/\n/g, '\\n') + quote
       context.report({
         node: prop.value,
-        message: `${CONSOLE_RED}"${value}"\n${matches.map(x => ' - ' + x.message).join('\n') + '\n=>' + CONSOLE_BLUE + ' ' + quotedFix}\n`,
+        message: `${CONSOLE_RED}"${value.replace(/\n/g, '\\n')}"\n${matches.map(x => ' - ' + x.message).join('\n') + '\n=>' + CONSOLE_BLUE + ' ' + quotedFix}\n`,
         // fix: (fixer) => fixer.replaceText(prop.value, quotedFix)
       })
     }
