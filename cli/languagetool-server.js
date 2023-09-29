@@ -10,8 +10,6 @@ const pids = require('port-pid');
 const serverPath = path.resolve(SERVER_PATH)
 const serverInfopath = path.resolve(SERVER_INFO_FILE)
 
-const CONSOLE_GREEN = '\e[32m'
-
 if (!commandExistsSync('java')) {
   console.error("Java must be installed")
   return process.exit(1)
@@ -73,7 +71,7 @@ async function serverInfo() {
 
 async function start() {
   let { running, port } = await serverInfo()
-  if (running) return console.log(CONSOLE_GREEN + 'LanguageTool server is already running' + (port ? ` (port ${port})` : ''))
+  if (running) return console.log('LanguageTool server is already running' + (port ? ` (port ${port})` : ''))
   if (!port) throw new Error("Couldn't find a port to start LanguageTool server")
 
   console.log('Starting LanguageTool on port: ' + port)
