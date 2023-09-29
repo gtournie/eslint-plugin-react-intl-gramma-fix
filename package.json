@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-intl-gramma-fix",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "dist/main.js",
   "dependencies": {
     "cli-progress": "3.12.0",

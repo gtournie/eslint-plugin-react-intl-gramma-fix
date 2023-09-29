@@ -73,7 +73,7 @@ async function serverInfo() {
 
 async function start() {
   let { running, port } = await serverInfo()
-  if (running) return console.log('LanguageTool server is already running' + (port ? ` (port ${port})` : ''))
+  if (running) return console.log(CONSOLE_GREEN + 'LanguageTool server is already running' + (port ? ` (port ${port})` : ''))
   if (!port) throw new Error("Couldn't find a port to start LanguageTool server")
 
   console.log('Starting LanguageTool on port: ' + port)
@@ -101,7 +101,7 @@ async function start() {
 
 async function stop() {
   let { running, port, pid } = await serverInfo()
-  if (!running) return console.log(CONSOLE_GREEN + 'LanguageTool server is not running');
+  if (!running) return console.log('LanguageTool server is not running');
   if (!pid) pid = (await pids(port)).tcp
   if (!pid) return console.error('Unable to stop LanguageTool server (pid not found)')
   process.kill(pid)
