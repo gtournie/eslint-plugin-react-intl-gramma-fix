@@ -25,5 +25,16 @@
     "build": "npx webpack --config webpack-gramma.config.js; npx webpack",
     "server:start": "node cli/languagetool-server.js start",
     "server:stop": "node cli/languagetool-server.js stop"
-  }
+  },
+  "description": "eslint plugin name: \"react-intl-gramma-fix\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtournie/eslint-plugin-react-intl-gramma-fix.git"
+  },
+  "author": "Guillaume Tournier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtournie/eslint-plugin-react-intl-gramma-fix/issues"
+  },
+  "homepage": "https://github.com/gtournie/eslint-plugin-react-intl-gramma-fix#readme"
 }
