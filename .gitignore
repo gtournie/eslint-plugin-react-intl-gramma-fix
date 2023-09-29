@@ -1,0 +1,5 @@
+server.info
+LanguageTool-server
+node_modules
+.DS_Store
+dist
